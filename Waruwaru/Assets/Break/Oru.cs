@@ -5,12 +5,13 @@ using UnityEngine;
 public class Oru : MonoBehaviour
 {
     [SerializeField] private float spriteWidth = 512;
-    [SerializeField] private Texture2D right, left;
+    private Texture2D sprite;
     private new Renderer renderer;
 
 
     private void Start()
     {
+        sprite = GetComponent<SpriteRenderer>().sprite.texture;
         renderer = GetComponent<Renderer>();
     }
 
@@ -24,7 +25,7 @@ public class Oru : MonoBehaviour
         GameObject go = new GameObject();
         go.transform.position = colPoint;
         float width = spriteWidth * (1 - percentage);
-        Sprite sp = Sprite.Create(right, new Rect(spriteWidth - width, 0, width, right.height), new Vector2(0.0f, 0.5f), 100.0f);
+        Sprite sp = Sprite.Create(sprite, new Rect(spriteWidth - width, 0, width, sprite.height), new Vector2(0.0f, 0.5f), 100.0f);
 
         SpriteRenderer rend = go.AddComponent<SpriteRenderer>();
         rend.sprite = sp;
@@ -36,13 +37,21 @@ public class Oru : MonoBehaviour
         go = new GameObject();
         go.transform.position = colPoint;
         width = spriteWidth * percentage;
-        sp = Sprite.Create(left, new Rect(0,0, width, left.height), new Vector2(1.0f, 0.5f), 100.0f);
+        sp = Sprite.Create(sprite, new Rect(0,0, width, sprite.height), new Vector2(1.0f, 0.5f), 100.0f);
 
         rend = go.AddComponent<SpriteRenderer>();
         rend.sprite = sp;
 
         go.AddComponent<Rigidbody2D>();
         go.AddComponent<BoxCollider2D>();
+
+        // score
+        if (percentage > 0.4f && percentage < 0.6f)
+            GameManager.score += 200;
+        else if (percentage > 0.2f && percentage < 0.8f)
+            GameManager.score += 50;
+        else
+            GameManager.score += 20;
 
         // destroy
         Destroy(gameObject);

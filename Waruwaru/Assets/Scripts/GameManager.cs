@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static int score;
+
     [SerializeField]
     int m_kobushiSwingMaxNum = 10;
 
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         m_kobushi = GameObject.Find("Kobushi");
+        score = 0;
     }
 
     // Update is called once per frame
@@ -22,8 +25,8 @@ public class GameManager : MonoBehaviour
 
         if (m_kobushiSwingMaxNum == kobushi.GetSwingNum() && kobushi.GetState() == Kobushi.KobushiState.end)
         {
-            //リザルト
-            Debug.Log("リザルトへ遷移");
+            //???U???g
+            Debug.Log("???U???g???J??");
         }
     }
 }
