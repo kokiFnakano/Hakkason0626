@@ -8,6 +8,7 @@ public class WaremonoCreater : MonoBehaviour
 
     [SerializeField]
     List<GameObject> m_waremonoPrefabs = new List<GameObject>();
+    [SerializeField] private AudioClip clip;
 
     Vector3 m_createPos;
 
@@ -29,6 +30,7 @@ public class WaremonoCreater : MonoBehaviour
 
         if(m_time > m_interval)
         {
+            AudioManager.Instance.PlaySE(clip);
             var tmp = Instantiate(m_waremonoPrefabs[Random.Range(0, m_waremonoPrefabs.Count)]);
             tmp.transform.position = new Vector3(m_createPos.x, m_createPos.y, m_createPos.z);
 

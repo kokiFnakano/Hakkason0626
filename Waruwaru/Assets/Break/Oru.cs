@@ -7,6 +7,7 @@ public class Oru : MonoBehaviour
     [SerializeField] private float spriteWidth = 512;
     [SerializeField] private GameObject score20, score50, score100;
     [SerializeField] private bool title = false;
+    [SerializeField] private AudioClip[] clip;
     private Texture2D sprite;
     private new Renderer renderer;
 
@@ -70,6 +71,7 @@ public class Oru : MonoBehaviour
         }
 
         // destroy
+        if(!title) AudioManager.Instance.PlaySE(clip[Random.Range(0, clip.Length)]);
         Destroy(gameObject);
     }
 }
