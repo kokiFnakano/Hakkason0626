@@ -20,10 +20,9 @@ public class GameManager : MonoBehaviour
     {
         Kobushi kobushi = m_kobushi.GetComponent<Kobushi>();
 
-        if (m_kobushiSwingMaxNum == kobushi.GetSwingNum() && kobushi.GetState() == Kobushi.KobushiState.end)
+        if (m_kobushiSwingMaxNum == kobushi.GetSwingNum() && kobushi.GetState() == Kobushi.KobushiState.idle)
         {
-            //???U???g
-            Debug.Log("???U???g???J??");
+            GameObject.Find("Main Camera").GetComponent<ResultCamera>().ResultStart();
         }
     }
 }
