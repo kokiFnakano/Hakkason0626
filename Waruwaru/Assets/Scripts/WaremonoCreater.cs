@@ -24,7 +24,8 @@ public class WaremonoCreater : MonoBehaviour
     {
         if(m_time > m_interval)
         {
-            Instantiate(m_waremonoPrefabs[Random.Range(0, 2)]).transform.position = new Vector3(m_createPos.x,m_createPos.y,m_createPos.z);
+            var tmp = Instantiate(m_waremonoPrefabs[Random.Range(0, 2)]);
+            tmp.transform.position = new Vector3(m_createPos.x, m_createPos.y, m_createPos.z);
 
             m_time = 0;
         }
