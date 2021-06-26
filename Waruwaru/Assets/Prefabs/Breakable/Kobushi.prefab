@@ -99,6 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 30
   m_swingEndPosY: -5
+  m_audioClips:
+  - {fileID: 8300000, guid: ce471d2a51f88224da2f466e644813af, type: 3}
 --- !u!50 &8628372714621936868
 Rigidbody2D:
   serializedVersion: 4

@@ -31,6 +31,9 @@ public class Kobushi : MonoBehaviour
 
     bool m_bHit = false;
 
+    [SerializeField]
+    AudioClip[] m_audioClips;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +73,8 @@ public class Kobushi : MonoBehaviour
                 m_state = KobushiState.swing;
 
                 m_swingNum++;
+
+                AudioManager.Instance.PlaySE(m_audioClips[0]);
             }
         }
     }
