@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb69b3d5ad28c7f47b5391d08d85bb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_kobushiSwingMaxNum: 3
+  m_kobushiSwingMaxNum: 10

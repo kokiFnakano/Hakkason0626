@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     GameObject m_kobushi = null;
 
+    bool m_bResult = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,13 @@ public class GameManager : MonoBehaviour
         if (m_kobushiSwingMaxNum == kobushi.GetSwingNum() && kobushi.GetState() == Kobushi.KobushiState.idle)
         {
             GameObject.Find("Main Camera").GetComponent<ResultCamera>().ResultStart();
+
+            m_bResult = true;
         }
+    }
+
+    public bool IsResult()
+    {
+        return m_bResult;
     }
 }
