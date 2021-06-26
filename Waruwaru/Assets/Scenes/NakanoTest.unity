@@ -606,6 +606,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3702556033962248867, guid: 1153aec462593ad4c84faa87f8439c1c, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 9055056265830454362, guid: 1153aec462593ad4c84faa87f8439c1c, type: 3}
       propertyPath: m_Name
       value: Combo
