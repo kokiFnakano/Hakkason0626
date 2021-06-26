@@ -44,6 +44,7 @@ Thumbs.db
 *.pyc
 
 /WaruWaru/Library
+/WaruWaru/Logs
 
 /WaruWaru/[Tt]emp/
 
