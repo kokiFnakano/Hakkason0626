@@ -905,6 +905,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8860997002939923470, guid: 66fd9a85d3c0a3c47a53d2da5f90319b, type: 3}
+      propertyPath: m_kobushiSwingMaxNum
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8860997002939923471, guid: 66fd9a85d3c0a3c47a53d2da5f90319b, type: 3}
       propertyPath: m_RootOrder
       value: 5
