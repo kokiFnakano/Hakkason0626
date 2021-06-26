@@ -81,6 +81,7 @@ public class Kobushi : MonoBehaviour
 
     }
 
+    //–ß‚Á‚Ä‚­‚é
     void End()
     {
         transform.position += new Vector3(0, m_speed * Time.deltaTime, 0);

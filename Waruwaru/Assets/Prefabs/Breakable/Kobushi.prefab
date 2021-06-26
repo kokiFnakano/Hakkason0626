@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7124639100920050053}
   m_Layer: 0
   m_Name: Kobushi
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8d8d69040f4474ba64273f0dc98dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 20
+  m_speed: 30
   m_swingEndPosY: -5
 --- !u!50 &8628372714621936868
 Rigidbody2D:

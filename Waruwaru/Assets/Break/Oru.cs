@@ -5,6 +5,7 @@ using UnityEngine;
 public class Oru : MonoBehaviour
 {
     [SerializeField] private float spriteWidth = 512;
+    [SerializeField] private GameObject score20, score50, score100;
     private Texture2D sprite;
     private new Renderer renderer;
 
@@ -17,6 +18,9 @@ public class Oru : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!collision.transform.CompareTag("Player"))
+            return;
+
         Vector3 colPoint = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y - 0.1f, 0);
         float diff = renderer.bounds.size.x - Mathf.Abs(colPoint.x - renderer.bounds.max.x);
         float percentage = diff / renderer.bounds.size.x;
@@ -47,11 +51,11 @@ public class Oru : MonoBehaviour
 
         // score
         if (percentage > 0.4f && percentage < 0.6f)
-            GameManager.score += 200;
+            Instantiate(score100, transform.position, Quaternion.identity);
         else if (percentage > 0.2f && percentage < 0.8f)
-            GameManager.score += 50;
+            Instantiate(score50, transform.position, Quaternion.identity);
         else
-            GameManager.score += 20;
+            Instantiate(score20, transform.position, Quaternion.identity);
 
         // destroy
         Destroy(gameObject);
