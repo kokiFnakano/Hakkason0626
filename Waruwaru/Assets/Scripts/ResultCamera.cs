@@ -36,5 +36,6 @@ public class ResultCamera : MonoBehaviour
     public void ResultStart()
     {
         m_bResultStart = true;
+        
     }
 }

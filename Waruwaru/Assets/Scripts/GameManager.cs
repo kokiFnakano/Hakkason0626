@@ -24,8 +24,9 @@ public class GameManager : MonoBehaviour
 
         if (m_kobushiSwingMaxNum == kobushi.GetSwingNum() && kobushi.GetState() == Kobushi.KobushiState.idle)
         {
-            GameObject.Find("Main Camera").GetComponent<ResultCamera>().ResultStart();
-
+            //GameObject.Find("Main Camera").GetComponent<ResultCamera>().ResultStart();
+            CameraMove.startMove = true;
+            WaremonoCreater.startGame = false;
             m_bResult = true;
         }
     }
