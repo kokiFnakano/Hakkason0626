@@ -45,6 +45,14 @@ public class Oru : MonoBehaviour
         go.AddComponent<Rigidbody2D>();
         go.AddComponent<BoxCollider2D>();
 
+        // score
+        if (percentage > 0.4f && percentage < 0.6f)
+            GameManager.score += 200;
+        else if (percentage > 0.2f && percentage < 0.8f)
+            GameManager.score += 50;
+        else
+            GameManager.score += 20;
+
         // destroy
         Destroy(gameObject);
     }
