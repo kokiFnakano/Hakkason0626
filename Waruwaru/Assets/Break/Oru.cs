@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Oru : MonoBehaviour
 {
-    [SerializeField] private float spriteWidth = 512;
     [SerializeField] private GameObject score20, score50, score100;
     [SerializeField] private bool title = false;
     [SerializeField] private AudioClip[] clip;
+    private float spriteWidth;
     private Texture2D sprite;
     private new Renderer renderer;
 
@@ -16,6 +14,7 @@ public class Oru : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>().sprite.texture;
         renderer = GetComponent<Renderer>();
+        spriteWidth = sprite.width;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -23,7 +22,7 @@ public class Oru : MonoBehaviour
         if (!collision.transform.CompareTag("Player"))
             return;
 
-        Vector3 colPoint = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y - 0.1f, 0);
+        Vector3 colPoint = new Vector3(collision.GetContact(0).point.x, collision.GetContact(0).point.y, 0);
         float diff = renderer.bounds.size.x - Mathf.Abs(colPoint.x - renderer.bounds.max.x);
         float percentage = diff / renderer.bounds.size.x;
 
@@ -31,29 +30,28 @@ public class Oru : MonoBehaviour
         GameObject go = new GameObject();
         go.transform.position = colPoint;
         go.transform.localScale = transform.localScale;
+        go.transform.rotation = transform.rotation;
         float width = spriteWidth * (1 - percentage);
         Sprite sp = Sprite.Create(sprite, new Rect(spriteWidth - width, 0, width, sprite.height), new Vector2(0.0f, 0.5f), 100.0f);
 
         SpriteRenderer rend = go.AddComponent<SpriteRenderer>();
         rend.sprite = sp;
-
-        Rigidbody2D rb = go.AddComponent<Rigidbody2D>();
+        go.AddComponent<Rigidbody2D>();
         go.AddComponent<BoxCollider2D>();
-        if(title) rb.AddForce(Vector3.right * 15);
 
         // left
         go = new GameObject();
         go.transform.position = colPoint;
         go.transform.localScale = transform.localScale;
+        go.transform.rotation = transform.rotation;
         width = spriteWidth * percentage;
         sp = Sprite.Create(sprite, new Rect(0,0, width, sprite.height), new Vector2(1.0f, 0.5f), 100.0f);
 
         rend = go.AddComponent<SpriteRenderer>();
         rend.sprite = sp;
 
-        rb = go.AddComponent<Rigidbody2D>();
+        go.AddComponent<Rigidbody2D>();
         go.AddComponent<BoxCollider2D>();
-        if(title) rb.AddForce(Vector3.left * 15);
 
         // score
         if (score20 != null)

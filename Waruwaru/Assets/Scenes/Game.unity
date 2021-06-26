@@ -507,7 +507,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_TargetDisplay: 0
 --- !u!224 &578946403
 RectTransform:
@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: clip
       value: 
       objectReference: {fileID: 8300000, guid: 8de9782bdf2ac47e7b6f48ae386b219a, type: 3}
+    - target: {fileID: 6405838899957417242, guid: fd2c8edeb62320a47ab76aeb2f8a3d80, type: 3}
+      propertyPath: m_interval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6405838899957417242, guid: fd2c8edeb62320a47ab76aeb2f8a3d80, type: 3}
       propertyPath: m_waremonoPrefabs.Array.size
       value: 15
@@ -1565,6 +1569,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4177472868019119164, guid: 5795c50fda3c944409f8927cbed1ec1b, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4392738425194765044, guid: 5795c50fda3c944409f8927cbed1ec1b, type: 3}
       propertyPath: m_Name
       value: Glass
