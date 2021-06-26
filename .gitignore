@@ -50,3 +50,17 @@ Thumbs.db
 
 #python bytecode cache, for some plugins.
 *.pyc
+
+/WaruWaru/Library
+
+/WaruWaru/[Tt]emp/
+
+/WaruWaru/[Oo]bj/
+
+/WaruWaru/[Bb]uild/
+
+/WaruWaru/[Bb]uilds/
+
+/WaruWaru/[Ll]ogs/
+
+/WaruWaru/[Uu]ser[Ss]ettings/
