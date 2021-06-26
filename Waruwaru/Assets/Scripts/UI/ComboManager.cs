@@ -18,7 +18,8 @@ public class ComboManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+            AddCombo();
     }
 
 
@@ -31,6 +32,7 @@ public class ComboManager : MonoBehaviour
         GameObject ui = Instantiate(comboUI);
         ui.GetComponent<Transform>().position = GetComponent<Transform>().position;
     }
+
 
 
 

@@ -120,6 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteWidth: 512
+  score20: {fileID: 3331816539287994677, guid: 340bc84cdde4b40498b27574069d20ce, type: 3}
+  score50: {fileID: 6784662597754139664, guid: d537d73c5eb9a184b86e60cce28c0a25, type: 3}
+  score100: {fileID: 3296777287539740280, guid: 74e0bc3be8ed5bd48bb6c3445575c80e, type: 3}
 --- !u!61 &7146002774021902833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -158,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9f52ecf61f753449acfa9d36591194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 5
+  m_speed: 10
