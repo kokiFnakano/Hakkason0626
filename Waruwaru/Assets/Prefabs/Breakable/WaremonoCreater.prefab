@@ -77,4 +77,4 @@ MonoBehaviour:
   m_waremonoPrefabs:
   - {fileID: 2429860709860098620, guid: a5512331fdf57b444b2b76107b59409a, type: 3}
   - {fileID: 5153003588949432177, guid: 958c958ab52cb8247b20a65c960b221c, type: 3}
-  m_interval: 1
+  m_interval: 3
