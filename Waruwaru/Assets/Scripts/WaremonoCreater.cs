@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WaremonoCreater : MonoBehaviour
 {
+    public static bool startGame = false;
+
     [SerializeField]
     List<GameObject> m_waremonoPrefabs = new List<GameObject>();
 
@@ -22,6 +24,9 @@ public class WaremonoCreater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!startGame)
+            return;
+
         if(m_time > m_interval)
         {
             var tmp = Instantiate(m_waremonoPrefabs[Random.Range(0, m_waremonoPrefabs.Count)]);

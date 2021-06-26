@@ -34,4 +34,9 @@ public class GameManager : MonoBehaviour
     {
         return m_bResult;
     }
+
+    public int GetKobushiSwingMaxNum()
+    {
+        return m_kobushiSwingMaxNum;
+    }
 }
